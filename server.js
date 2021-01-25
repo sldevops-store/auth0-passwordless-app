@@ -19,7 +19,7 @@ var pool = mysql.createPool({
 })
 
 const homePageUrl = "https://www.w3schools.com";
-const errorLanding = "http://localhost:3000/"
+const errorLanding = "https://www.eventforme.tk/"
 
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 

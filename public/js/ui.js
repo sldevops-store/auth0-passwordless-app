@@ -70,7 +70,7 @@ const updateUI = async () => {
           mob = user.name.substring(1,)
       }
       
-      window.location.replace("http://localhost:3000/user?uid="+uid+"&mob="+mob);
+      window.location.replace("https://www.eventforme.tk/user?uid="+uid+"&mob="+mob);
     } else {
 
       eachElement(".auth-invisible", (e) => e.classList.remove("hidden"));
