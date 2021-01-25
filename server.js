@@ -13,9 +13,9 @@ app.use(bodyParser.json())
 
 var pool = mysql.createPool({
   host: 'localhost',
-  user: 'root',
-  password: 'manuja0712',
-  database: 'companydatabase'
+  user: 'bill',
+  password: 'passpass',
+  database: 'trilokuser'
 })
 
 const homePageUrl = "https://www.w3schools.com";
@@ -35,7 +35,7 @@ app.get("/user", urlencodedParser, (req, res) => {
   //check user already in or not
   const uid = req.query.uid;
 
-  var query = 'SELECT * from user_details WHERE id=?';
+  var query = 'SELECT * from trilokuserdata WHERE trilokuserid=?';
 
   pool.query(query, uid, function (err, rows) {
     if (err) {
@@ -62,7 +62,7 @@ app.post('/add', urlencodedParser, function (req, res) {
   const aUid = req.query.uid;
   const mob = req.query.mob;
 
-  var sql = "INSERT INTO user_details (id, mobile_number, name, email) VALUES (?, ?, ?, ?)";
+  var sql = "INSERT INTO trilokuserdata (trilokuserdataid, mobilephone1, name, email1) VALUES (?, ?, ?, ?)";
 
   pool.query(sql, [aUid, mob, req.body.name, req.body.email], function (err, rows) {
     if (err) {
